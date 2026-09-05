@@ -1,7 +1,7 @@
-var isArray = require('is-array')
-var isObject = require('is-object')
+import isArray from 'is-array'
+import isObject from 'is-object'
 
-exports.stringify = function stringify (argument) {
+export function stringify (argument) {
   if (typeof argument === 'string') {
     return quote(argument)
   } else if (isArray(argument)) {
@@ -32,4 +32,4 @@ function list (start, values, end) {
   return start + values.join(',') + end
 }
 
-exports.parse = JSON.parse.bind(JSON)
+export const parse = JSON.parse.bind(JSON)

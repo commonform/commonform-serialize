@@ -5,13 +5,14 @@ serialize Common Forms
 This package defines a uniform, deterministic way to serialize Common Form objects, so they can be [hashed](https://www.npmjs.com/package/commonform-hash) consistently.
 
 ```javascript
-var serialize = require('commonform-serialize')
+import * as serialize from 'commonform-serialize'
 ```
 
 Sorts object keys:
 
 ```javascript
-var assert = require('assert')
+import assert from 'node:assert'
+
 assert.deepEqual(
   serialize.stringify({ a: '1', b: '2' }),
   serialize.stringify({ b: '2', a: '1' })
@@ -21,19 +22,19 @@ assert.deepEqual(
 Outputs valid JSON `String`, `Object`, and `Array`:
 
 ```javascript
-var a1 = { a: '1' }
+const a1 = { a: '1' }
 assert.deepEqual(
   JSON.parse(serialize.stringify(a1)),
   a1
 )
 
-var a12 = { a: [ '1', '2' ] }
+const a12 = { a: [ '1', '2' ] }
 assert.deepEqual(
   JSON.parse(serialize.stringify(a12)),
   a12
 )
 
-var aEmpty = { a: [ ] }
+const aEmpty = { a: [ ] }
 assert.deepEqual(
   JSON.parse(serialize.stringify(aEmpty)),
   aEmpty
@@ -52,7 +53,7 @@ assert.deepEqual(
 Throw errors for non-`String`, non-`Object`, non-`Array` content:
 
 ```javascript
-var invalidValues = {
+const invalidValues = {
   boolean: true,
   number: 1,
   null: null,
