@@ -10,8 +10,7 @@
     "is-object": "^1.0.1"
   },
   "devDependencies": {
-    "defence-cli": "^3.0.1",
-    "standard": "^14.0.2"
+    "defence-cli": "^3.0.1"
   },
   "files": [],
   "homepage": "https://commonform.github.io",
@@ -25,7 +24,6 @@
   "license": "BlueOak-1.0.0",
   "repository": "commonform/commonform-serialize",
   "scripts": {
-    "test": "defence README.md | sed \"s!from 'commonform-serialize'!from './index.js'!\" | node",
-    "lint": "standard"
+    "test": "defence README.md | sed \"s!from 'commonform-serialize'!from './index.js'!\" | node"
   }
 }
